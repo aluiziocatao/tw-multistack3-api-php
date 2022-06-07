@@ -10,5 +10,13 @@ class Adocao extends Model
     use HasFactory;
 
     protected $table = 'adocoes';
-    protected $fillable = ['pet_id', 'email', 'valor'];
+    protected $fillable = ['email', 'valor', 'pet_id'];
+
+    /**
+     * Define a relação a adoção com o pet
+     * @return BelogsTo
+     */
+    public function pet(){
+        return $this->belongsTo(Pet::class);
+    }
 }

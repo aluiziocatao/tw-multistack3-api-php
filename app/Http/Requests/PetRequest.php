@@ -19,14 +19,14 @@ class PetRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, mixed>
+     * @return array string
      */
     public function rules()
     {
         return [
-            "email" => ['required', 'email'],
-            "valor" => ['required', 'numeric', 'between:10,100'],
-            "pet_id" => ['required', 'int', 'exists:pets,id']
+            'nome' => ['required', 'string', 'between:3,100'],
+            'historia' => ['required', 'string'],
+            'foto' => ['required', 'url', 'max:1000']
         ];
     }
 }
